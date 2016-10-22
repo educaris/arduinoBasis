@@ -8,7 +8,7 @@
   Als je wilt weten welke pin gebruikt wordt voor de on-board LED op jou Arduino model, bekijk
   de Technical Specs van je bord op https://www.arduino.cc/en/Main/Products
   
-  Deze voorbeeld code is in het publieke domijn.
+  Deze voorbeeld code is in het publieke domein.
 
   modified 8 May 2014
   by Scott Fitzgerald
@@ -23,15 +23,19 @@
 
 // De setup functie draait een keer wanneer je op de reset knop drukt of stroom op het bord zet.
 
+  //maak een int aan. Op deze manier kunnen we het woord LED gebruiken ipv het pin nummer
+
+int led = 13;
+
 void setup() {
   // Maakt van de digitale pin LED_BUILTIN een output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(led, OUTPUT);
 }
 
 // Deze functie loopt voor altijd door
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // Zet de LED aan (HIGH is het voltage level)
+  digitalWrite(led, HIGH);   // Zet de LED aan (HIGH is het voltage level)
   delay(1000);                       // wacht een seconde
-  digitalWrite(LED_BUILTIN, LOW);    // Zet de LED uit door het voltage LOW te maken
+  digitalWrite(led, LOW);    // Zet de LED uit door het voltage LOW te maken
   delay(1000);                       // wacht een seconde
 }
